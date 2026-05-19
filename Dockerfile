@@ -1,0 +1,28 @@
+FROM php:8.2-apache
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    curl zip unzip git libzip-dev libpng-dev libonig-dev \
+    && docker-php-ext-install pdo pdo_mysql zip mbstring gd
+
+# Install Node.js 20
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs
+
+# Install Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+WORKDIR /var/www/html
+COPY . .
+
+RUN composer install --no-dev --optimize-autoloader
+RUN npm install && npm run build
+
+# Laravel permissions
+RUN chown -R www-data:www-data storage bootstrap/cache
+
+# Point Apache to Laravel's public folder
+RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
+RUN a2enmod rewrite
+
+EXPOSE 80
