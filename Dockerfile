@@ -3,7 +3,7 @@ FROM php:8.2-apache
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     curl zip unzip git libzip-dev libpng-dev libonig-dev \
-    && && docker-php-ext-install pdo pdo_mysql pdo_pgsql zip mbstring gd
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql zip mbstring gd
 
 # Install Node.js 20
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
