@@ -27,4 +27,4 @@ RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 RUN a2enmod rewrite
 
 EXPOSE 80
-CMD php artisan migrate --force && php artisan db:seed --force && apache2-foreground
+CMD php artisan migrate --force && apache2-foreground
