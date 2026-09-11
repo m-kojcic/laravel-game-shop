@@ -32,4 +32,4 @@ RUN echo '<Directory /var/www/html/public>\n\
 RUN a2enmod rewrite
 
 EXPOSE 80
-CMD php artisan migrate --force && php artisan db:seed --force && apache2-foreground
+CMD php artisan migrate --force && apache2-foreground
