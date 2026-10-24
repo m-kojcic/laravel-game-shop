@@ -6,7 +6,7 @@ This is a web-based video game store built using Laravel. It features user authe
 
 ---
 
-## 🌐 Available Languages
+## Available Languages
 
 - [English](README.md)
 - [Srpski](README.sr.md)
@@ -14,7 +14,7 @@ This is a web-based video game store built using Laravel. It features user authe
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 The project is live and accessible at:
 

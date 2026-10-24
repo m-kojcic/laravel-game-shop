@@ -6,7 +6,7 @@ Ovo je web aplikacija za prodaju video igara napravljena u Laravelu. Omogucava a
 
 ---
 
-## 🌐 Dostupni jezici
+## Dostupni jezici
 
 - [English](README.md)
 - [Srpski](README.sr.md)
@@ -14,7 +14,7 @@ Ovo je web aplikacija za prodaju video igara napravljena u Laravelu. Omogucava a
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 Projekat je dostupan na:
 
